@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
@@ -10,7 +11,8 @@ public class MovingPlatform : MonoBehaviour
     public GameObject platformObject;                       // Obiekt platformy (mo�na przypisa� w inspektorze)
     public float speed = 5f;                               // Pr�dko�� ruchu
     public bool isLooping = true;                          // Czy ruch ma by� zap�tlony
-
+    
+    
     private bool movingToEnd = true;                        // Flaga kierunku ruchu
 
     void Start()
@@ -21,7 +23,7 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (platformObject)
         {
@@ -39,7 +41,7 @@ public class MovingPlatform : MonoBehaviour
             new Vector3(targetPosition.x, targetPosition.y, platformObject.transform.position.z),
             speed * Time.deltaTime
         );
-
+        
         // Sprawdzanie, czy platforma osi�gn�a docelow� pozycj�
         if (Vector3.Distance(platformObject.transform.position, new Vector3(targetPosition.x, targetPosition.y, platformObject.transform.position.z)) < 0.1f)
         {
@@ -47,16 +49,14 @@ public class MovingPlatform : MonoBehaviour
             {
                 // Zmiana kierunku, je�li zap�tlono
                 movingToEnd = !movingToEnd;
+          
             }
             else
             {
                 // Platforma zatrzymuje si� na ko�cowej pozycji
                 enabled = false;
+              
             }
         }
-    }
-     public float getCurrentSpeed()
-    {
-        return speed*(movingToEnd?1:-1);
     }
 }

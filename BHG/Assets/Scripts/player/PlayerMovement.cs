@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Collider2D feetCollider;
     [SerializeField] private Collider2D bodyCollider;
     [SerializeField] private Animator playerAnim;
+    [SerializeField] private GameObject character;
 
 
     public Rigidbody2D rb { get; private set; }
@@ -15,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveVelocity;
     private bool isFacingRight;
     
-    private float movingPlatformVelocity;
+    private bool onMovingPlatform;
 
 
     //collision vars
@@ -49,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         isFacingRight = true;
-
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -82,17 +83,13 @@ public class PlayerMovement : MonoBehaviour
         if (moveInput != Vector2.zero)
         {
             moveVelocity = Vector2.Lerp(moveVelocity,new Vector2(moveInput.x,0f)* MoveStats.maxWalkSpeed,acceleration*Time.fixedDeltaTime);
-            rb.linearVelocity = new Vector2(moveVelocity.x, rb.linearVelocity.y);
         }
         else
         {
             moveVelocity = Vector2.Lerp(moveVelocity, Vector2.zero, deceleration * Time.fixedDeltaTime);
-            if (movingPlatformVelocity != 0)
-            {
-                moveVelocity = Vector2.Lerp(moveVelocity, new Vector2(movingPlatformVelocity,rb.linearVelocity.y) , acceleration * Time.fixedDeltaTime);
-            }
-            rb.linearVelocity = new Vector2(moveVelocity.x, rb.linearVelocity.y);
+          
         }
+        rb.linearVelocity = new Vector2(moveVelocity.x, rb.linearVelocity.y);
 
     }
 
@@ -130,14 +127,6 @@ public class PlayerMovement : MonoBehaviour
         if(groundHit.collider)
         {
             isGrounded = true;
-            if (groundHit.collider.CompareTag("Moving"))
-            {
-                movingPlatformVelocity = groundHit.collider.gameObject.GetComponent<MovingPlatform>().getCurrentSpeed();
-            }
-            else
-            {
-                movingPlatformVelocity = 0;
-            }
         }
         else
         {
@@ -331,6 +320,22 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             coyoteTimer = MoveStats.JumpCoyoteTime;
+        }
+    }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Moving") && transform.parent != collision.transform)
+        {
+            transform.SetParent(collision.transform, true); // Attach to platform, preserving position
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Moving") && transform.parent != null)
+        {
+            transform.SetParent(null); // Detach from platform
         }
     }
 

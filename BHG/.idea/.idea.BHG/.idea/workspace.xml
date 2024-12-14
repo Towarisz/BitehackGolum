@@ -6,13 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7dcce852-feb2-4e82-8113-bd8379b5123f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BHG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BHG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/platforma ruchoma.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/platforma ruchoma.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MSScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MSScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tileset/platforma/spr_torch.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tileset/platforma/spr_torch.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/player/PlayerMovementStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/player/PlayerMovementStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/platformMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/platformMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Search.settings" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Search.settings" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +99,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1734181101766</updated>
-      <workItem from="1734181104735" duration="8219000" />
+      <workItem from="1734181104735" duration="13404000" />
     </task>
     <servers />
   </component>
