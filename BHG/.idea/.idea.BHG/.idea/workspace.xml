@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dcce852-feb2-4e82-8113-bd8379b5123f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/player/PlayerRespawn.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/player/PlayerRespawn.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BHG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BHG/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MSScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MSScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/player/PlayerMovementStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/player/PlayerMovementStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/platformMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/platformMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Search.settings" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Search.settings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -99,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1734181101766</updated>
-      <workItem from="1734181104735" duration="13404000" />
+      <workItem from="1734181104735" duration="15831000" />
     </task>
     <servers />
   </component>
@@ -115,5 +116,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/CheckpointScript.cs</url>
+          <line>10</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/CheckpointScript.cs" containingFunctionPresentation="Method 'OnTriggerEnter2D'">
+            <startOffsets>
+              <option value="216" />
+            </startOffsets>
+            <endOffsets>
+              <option value="248" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
