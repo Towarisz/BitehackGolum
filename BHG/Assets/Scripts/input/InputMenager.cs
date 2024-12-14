@@ -10,11 +10,14 @@ public class InputMenager : MonoBehaviour
     public static bool timeChangePastPressed;
     public static bool timeChangePresPressed;
     public static bool timeChangeFutuPressed;
-    public static bool jumpIsHeld;
     public static bool jumpWasReleased;
 
     private InputAction moveAction;
     private InputAction jumpAction;
+    private InputAction timeFutuAction;
+    private InputAction timePresAction;
+    private InputAction timepastAction;
+    
 
     private void Awake()
     {
@@ -22,6 +25,9 @@ public class InputMenager : MonoBehaviour
 
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
+        timeFutuAction = playerInput.actions["TimeChangeFutu"];
+        timepastAction = playerInput.actions["TimeChangePast"];
+        timePresAction = playerInput.actions["TimeChangePres"];
     }
 
     private void Update()
@@ -29,7 +35,9 @@ public class InputMenager : MonoBehaviour
         movement = moveAction.ReadValue<Vector2>();
 
         jumpWasPressed = jumpAction.WasPerformedThisFrame();
-        jumpIsHeld = jumpAction.IsPressed();
+        timeChangeFutuPressed = timeFutuAction.WasPerformedThisFrame();
+        timeChangePresPressed = timePresAction.WasPerformedThisFrame();
+        timeChangePastPressed = timepastAction.WasPerformedThisFrame();
         jumpWasReleased = jumpAction.WasReleasedThisFrame();
 
     }

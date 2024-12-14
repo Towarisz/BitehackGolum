@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Collider2D bodyCollider;
     [SerializeField] private Animator playerAnim;
     [SerializeField] private GameObject character;
+    [SerializeField] private float gapBetweenTimelines = 200f;
+
+    private int currentTimeline = 0;
 
 
     public Rigidbody2D rb { get; private set; }
@@ -58,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
     {
         CountTimers();
         JumpChecks();
+        changeTimeLines();
     }
 
     private void FixedUpdate()
@@ -320,6 +324,29 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             coyoteTimer = MoveStats.JumpCoyoteTime;
+        }
+    }
+
+    private void changeTimeLines()
+    {
+        if (InputMenager.timeChangeFutuPressed && currentTimeline != 1)
+        {
+            //animacja
+            int changeValue = 1 - currentTimeline;
+            transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y + gapBetweenTimelines * changeValue, transform.position.z),transform.rotation); 
+            currentTimeline = 1;
+        }else if (InputMenager.timeChangePresPressed && currentTimeline != 0)
+        {
+            //animacja
+            int changeValue = -currentTimeline;
+            transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y + gapBetweenTimelines * changeValue, transform.position.z),transform.rotation); 
+            currentTimeline = 0;
+        }else if (InputMenager.timeChangePastPressed && currentTimeline != -1)
+        {
+            //animacja
+            int changeValue = currentTimeline - 1;
+            transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y + gapBetweenTimelines * changeValue, transform.position.z),transform.rotation); 
+            currentTimeline = -1;
         }
     }
     
