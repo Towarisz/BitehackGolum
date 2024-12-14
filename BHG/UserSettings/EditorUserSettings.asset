@@ -13,10 +13,17 @@ EditorUserSettings:
       value: 5557555055565d5e5b575f7144770813134f40727d7d7768782b4437bab9313b
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 0750015454050a020b0a5f7549700b44424e4b782e70723128714831e6e66d6a
 =======
       value: 5b52515e5d0c5c5908590a7b15740a44414f4e2b752c73342c7f4e31b1b8306c
 >>>>>>> 81476eb (Auto stash before rebase of "Marta" onto "origin/master")
+=======
+      value: 5b52515e5d0c5c5908590a7b15740a44414f4e2b752c73342c7f4e31b1b8306c
+=======
+      value: 0750015454050a020b0a5f7549700b44424e4b782e70723128714831e6e66d6a
+>>>>>>> 3e22b09 (mapa)
+>>>>>>> 438bcfd (mapa)
 >>>>>>> Stashed changes
       flags: 0
     vcSharedLogLevel:
