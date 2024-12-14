@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     //movement vars
     private Vector2 moveVelocity;
     private bool isFacingRight;
+    
+    private float movingPlatformVelocity;
 
 
     //collision vars
@@ -84,7 +86,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            moveVelocity = Vector2.Lerp(moveVelocity, Vector2.zero , deceleration * Time.fixedDeltaTime);
+            moveVelocity = Vector2.Lerp(moveVelocity, Vector2.zero, deceleration * Time.fixedDeltaTime);
+            if (movingPlatformVelocity != 0)
+            {
+                moveVelocity = Vector2.Lerp(moveVelocity, new Vector2(movingPlatformVelocity,rb.linearVelocity.y) , acceleration * Time.fixedDeltaTime);
+            }
             rb.linearVelocity = new Vector2(moveVelocity.x, rb.linearVelocity.y);
         }
 
@@ -124,11 +130,21 @@ public class PlayerMovement : MonoBehaviour
         if(groundHit.collider)
         {
             isGrounded = true;
+            if (groundHit.collider.CompareTag("Moving"))
+            {
+                movingPlatformVelocity = groundHit.collider.gameObject.GetComponent<MovingPlatform>().getCurrentSpeed();
+            }
+            else
+            {
+                movingPlatformVelocity = 0;
+            }
         }
         else
         {
             isGrounded = false;
         }
+
+        
     }
     
     private void CheckIfHeadHitCeli()

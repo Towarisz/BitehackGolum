@@ -4,18 +4,18 @@ public class MovingPlatform : MonoBehaviour
 {
     [Header("Movement Range")]
     public Vector2 startPosition = new Vector2(0f, 0f);   // Pozycja startowa (x, y)
-    public Vector2 endPosition = new Vector2(10f, 0f);     // Pozycja koñcowa (x, y)
+    public Vector2 endPosition = new Vector2(10f, 0f);     // Pozycja koï¿½cowa (x, y)
     
     [Header("Settings")]
-    public GameObject platformObject;                       // Obiekt platformy (mo¿na przypisaæ w inspektorze)
-    public float speed = 5f;                               // Prêdkoœæ ruchu
-    public bool isLooping = true;                          // Czy ruch ma byæ zapêtlony
+    public GameObject platformObject;                       // Obiekt platformy (moï¿½na przypisaï¿½ w inspektorze)
+    public float speed = 5f;                               // Prï¿½dkoï¿½ï¿½ ruchu
+    public bool isLooping = true;                          // Czy ruch ma byï¿½ zapï¿½tlony
 
     private bool movingToEnd = true;                        // Flaga kierunku ruchu
 
     void Start()
     {
-        if (platformObject != null)// Ustawienie pocz¹tkowej pozycji platformy
+        if (platformObject != null)// Ustawienie poczï¿½tkowej pozycji platformy
         {
             platformObject.transform.position = new Vector3(startPosition.x, startPosition.y, platformObject.transform.position.z);
         }
@@ -23,7 +23,7 @@ public class MovingPlatform : MonoBehaviour
 
     void Update()
     {
-        if (platformObject != null)
+        if (platformObject)
         {
             MovePlatform();// Ruch platformy
         }
@@ -31,7 +31,7 @@ public class MovingPlatform : MonoBehaviour
 
     void MovePlatform()
     {
-        Vector2 targetPosition = movingToEnd ? endPosition : startPosition;// Okreœlenie docelowej pozycji na podstawie kierunku
+        Vector2 targetPosition = movingToEnd ? endPosition : startPosition;// Okreï¿½lenie docelowej pozycji na podstawie kierunku
         
         // Przemieszczanie platformy
         platformObject.transform.position = Vector3.MoveTowards(
@@ -40,19 +40,23 @@ public class MovingPlatform : MonoBehaviour
             speed * Time.deltaTime
         );
 
-        // Sprawdzanie, czy platforma osi¹gnê³a docelow¹ pozycjê
+        // Sprawdzanie, czy platforma osiï¿½gnï¿½a docelowï¿½ pozycjï¿½
         if (Vector3.Distance(platformObject.transform.position, new Vector3(targetPosition.x, targetPosition.y, platformObject.transform.position.z)) < 0.1f)
         {
             if (isLooping)
             {
-                // Zmiana kierunku, jeœli zapêtlono
+                // Zmiana kierunku, jeï¿½li zapï¿½tlono
                 movingToEnd = !movingToEnd;
             }
             else
             {
-                // Platforma zatrzymuje siê na koñcowej pozycji
+                // Platforma zatrzymuje siï¿½ na koï¿½cowej pozycji
                 enabled = false;
             }
         }
+    }
+     public float getCurrentSpeed()
+    {
+        return speed*(movingToEnd?1:-1);
     }
 }

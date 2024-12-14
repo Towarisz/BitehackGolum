@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8179512976658773164}
   - component: {fileID: 5725502506554057724}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: platforma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8533445123667440274}
   - component: {fileID: 4299136411465298853}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: platforma (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8040553653732967870}
   - component: {fileID: 6531350627002173657}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: platforma (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 4063804445222203228}
   - component: {fileID: 2135673133034397652}
   - component: {fileID: 261251446113873812}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: platforma ruchoma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2.6189048, y: -0.038943768}
+  m_Offset: {x: -2.622152, y: -0.038943768}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -358,5 +358,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.6128969, y: 0.5196924}
+  m_Size: {x: 1.5739326, y: 0.5002103}
   m_EdgeRadius: 0
