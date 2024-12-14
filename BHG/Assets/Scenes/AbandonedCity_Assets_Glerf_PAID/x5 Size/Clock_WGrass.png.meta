@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Clock_WGrass_0: 703743189951223991
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

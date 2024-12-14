@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      StopSign_Flowers_Moss_0: -723272128127442786
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

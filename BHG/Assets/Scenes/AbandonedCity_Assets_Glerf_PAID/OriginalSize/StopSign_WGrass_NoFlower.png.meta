@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      StopSign_WGrass_NoFlower_0: -7664411025436159350
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

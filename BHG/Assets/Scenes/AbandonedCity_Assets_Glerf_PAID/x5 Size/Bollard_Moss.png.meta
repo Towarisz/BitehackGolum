@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bollard_Moss_0: 2548595556405650946
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

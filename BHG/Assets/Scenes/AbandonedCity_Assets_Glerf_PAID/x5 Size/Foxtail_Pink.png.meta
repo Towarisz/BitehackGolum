@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Foxtail_Pink_0: 3190404157025861800
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

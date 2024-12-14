@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FloatingFlower_Blue_0: -8727044309261025417
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
