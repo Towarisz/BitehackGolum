@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveStats: {fileID: 11400000, guid: 10fac0f3e2a5c3247b22d3e5a8bd4152, type: 2}
   feetCollider: {fileID: 349852965}
-  bodyCollider: {fileID: 1818189720}
+  bodyCollider: {fileID: 0}
   playerAnim: {fileID: 200322991}
 --- !u!114 &200322989
 MonoBehaviour:
@@ -391,7 +391,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.031480253, y: -0.7148963}
+  m_Offset: {x: -0.032852888, y: -0.7176416}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -401,7 +401,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.31277072, y: 0.13218284}
+  m_Size: {x: 0.30087447, y: 0.11754125}
   m_EdgeRadius: 0
 --- !u!4 &349852966
 Transform:
@@ -601,7 +601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 200322988}
   lookOffset: 2
-  lookAheadSpeed: 5
+  lookAheadSpeed: 4
   lookAheadDistance: 2
 --- !u!114 &1221260355
 MonoBehaviour:
@@ -1200,8 +1200,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1365792126}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1818189720
-BoxCollider2D:
+--- !u!70 &1818189720
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1234,18 +1234,9 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.03126341, y: 0.040780425}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.31364095, y: 1.3943253}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.032717288, y: -0.10731268}
+  m_Size: {x: 0.308931, y: 1.2146254}
+  m_Direction: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

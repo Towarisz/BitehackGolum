@@ -134,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
     private void CheckIfHeadHitCeli()
     {
         Vector2 boxCastOrigin = new Vector2(bodyCollider.bounds.center.x, bodyCollider.bounds.max.y);
-        Vector2 boxCastSize = new Vector2(bodyCollider.bounds.size.x, MoveStats.headDetectionRayLenght);
+        Vector2 boxCastSize = new Vector2(bodyCollider.bounds.size.x/2, MoveStats.headDetectionRayLenght);
 
         groundHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.up, MoveStats.headDetectionRayLenght, MoveStats.groundLayer);
         if(groundHit.collider)
