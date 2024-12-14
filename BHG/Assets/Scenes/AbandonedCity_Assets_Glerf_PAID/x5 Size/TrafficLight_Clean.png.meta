@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TrafficLight_Clean_0: -6176926395280127382
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

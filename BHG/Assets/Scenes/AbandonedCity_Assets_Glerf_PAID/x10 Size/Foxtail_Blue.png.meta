@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Foxtail_Blue_0: -1459472162304431399
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

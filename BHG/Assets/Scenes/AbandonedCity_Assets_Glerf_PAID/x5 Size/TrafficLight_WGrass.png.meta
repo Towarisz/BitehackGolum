@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TrafficLight_WGrass_0: -5820883376750254405
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

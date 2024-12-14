@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      VendingMachine_WGrass_0: -6217352499633120135
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

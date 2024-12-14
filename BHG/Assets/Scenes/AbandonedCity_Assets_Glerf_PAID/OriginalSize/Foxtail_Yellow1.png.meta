@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Foxtail_Yellow1_0: 4235394057453764607
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
