@@ -6,8 +6,10 @@ public class PlayerMovement : MonoBehaviour
     public PlayerMovementStats MoveStats;
     [SerializeField] private Collider2D feetCollider;
     [SerializeField] private Collider2D bodyCollider;
+    [SerializeField] private Animator playerAnim;
 
-    private Rigidbody2D rb;
+
+    public Rigidbody2D rb { get; private set; }
 
     //movement vars
     private Vector2 moveVelocity;
@@ -68,6 +70,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Move(MoveStats.airAcceleration, MoveStats.airDeceleration, InputMenager.movement);
         }
+        
+        playerAnim.SetFloat("Speed",Mathf.Abs(InputMenager.movement.x));
     }
 
     private void Move(float acceleration, float deceleration, Vector2 moveInput) 

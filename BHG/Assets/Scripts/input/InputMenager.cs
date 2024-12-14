@@ -7,6 +7,9 @@ public class InputMenager : MonoBehaviour
 
     public static Vector2 movement;
     public static bool jumpWasPressed;
+    public static bool timeChangePastPressed;
+    public static bool timeChangePresPressed;
+    public static bool timeChangeFutuPressed;
     public static bool jumpIsHeld;
     public static bool jumpWasReleased;
 
