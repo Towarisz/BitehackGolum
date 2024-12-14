@@ -219,6 +219,10 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 8603151132245587098}
+    - target: {fileID: 734749581809025214, guid: 55bd515920e174792a764ed4aa7b11da, type: 3}
+      propertyPath: gapBetweenTimelines
+      value: 226
+      objectReference: {fileID: 0}
     - target: {fileID: 1178055338292924984, guid: 55bd515920e174792a764ed4aa7b11da, type: 3}
       propertyPath: m_TagString
       value: Player
@@ -324,6 +328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0084386934a74018ad1063407425418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 0}
-  player: {fileID: 0}
-  checkpointHandler: {fileID: 0}
+  playerMovement: {fileID: 7565807577744750286}
+  player: {fileID: 8603151132245587098}
+  checkpointHandler: {fileID: 6625027820344286632}
