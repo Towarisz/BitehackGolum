@@ -22,15 +22,15 @@ MonoBehaviour:
     m_Bits: 8
   groundDetectionRayLenght: 0.02
   headDetectionRayLenght: 0.02
-  JumpHeight: 2.5
-  JumpHeightCompensationFactor: 1.054
+  JumpHeight: 3
+  JumpHeightCompensationFactor: 1
   TimeTillJumpApex: 0.25
   GravityOnReleaseMultiplier: 2
   MaxFallSpeed: 7
-  NumberOfJumpsAllowed: 2
+  NumberOfJumpsAllowed: 1
   TimeForUpwardsCancel: 0.027
   ApexThreshold: 0.97
-  ApexHangTime: 0.075
+  ApexHangTime: 0.1
   JumpBufferTime: 0.125
   JumpCoyoteTime: 0.1
   DebugShowIsGroundedBox: 0

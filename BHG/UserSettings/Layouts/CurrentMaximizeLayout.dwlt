@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 4832
+  controlID: 4994
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -591,9 +591,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0.95949787, y: 0.8486835, z: -0.01259802}
+    m_Target: {x: 0.81573546, y: -1.2368009, z: -0.051266983}
     speed: 2
-    m_Value: {x: 0.95949787, y: 0.8486835, z: -0.01259802}
+    m_Value: {x: 0.81573546, y: -1.2368009, z: -0.051266983}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -643,9 +643,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.5623283
+    m_Target: 10.429228
     speed: 2
-    m_Value: 6.5623283
+    m_Value: 10.429228
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 4833
+  controlID: 4995
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -726,7 +726,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 4834
+  controlID: 4996
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -793,8 +793,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6218ffff
-      m_LastClickedID: -59294
+      m_SelectedIDs: 9e1fffff
+      m_LastClickedID: -57442
       m_ExpandedIDs: 8218ffff9e1fffff1021ffff7625ffffba2dffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -916,7 +916,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -1021,7 +1021,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Mats
+    - Assets/Art
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1031,16 +1031,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Mats
+  - Assets/Art
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/mateuszstoch/Desktop/BitehackGolum/BHG
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 40.499084}
-    m_SelectedIDs: 500c0100
-    m_LastClickedID: 68688
-    m_ExpandedIDs: 0000000018e7000000ca9a3bffffff7f
+    m_SelectedIDs: be0a0100
+    m_LastClickedID: 68286
+    m_ExpandedIDs: 0000000018e70000520a010000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1095,10 +1095,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 6218ffff
-    m_LastClickedInstanceID: -59294
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000
+    m_SelectedInstanceIDs: 9e1fffff
+    m_LastClickedInstanceID: -57442
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000080f0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1182,8 +1182,8 @@ MonoBehaviour:
     y: 0
     width: 442.5
     height: 844
-  m_MinSize: {x: 276, y: 76}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
