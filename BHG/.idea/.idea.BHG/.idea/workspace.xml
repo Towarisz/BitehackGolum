@@ -6,20 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="7dcce852-feb2-4e82-8113-bd8379b5123f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BHG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BHG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Untitled.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Untitled.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MSScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MSScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/player/PlayerRespawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/player/PlayerRespawn.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -31,6 +35,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;mateusz&quot;,
@@ -95,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1734181101766</updated>
-      <workItem from="1734181104735" duration="5465000" />
+      <workItem from="1734181104735" duration="18182000" />
     </task>
     <servers />
   </component>
@@ -111,5 +116,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/CheckpointScript.cs</url>
+          <line>10</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/CheckpointScript.cs" containingFunctionPresentation="Method 'OnTriggerEnter2D'">
+            <startOffsets>
+              <option value="216" />
+            </startOffsets>
+            <endOffsets>
+              <option value="248" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

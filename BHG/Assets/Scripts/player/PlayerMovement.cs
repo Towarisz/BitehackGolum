@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,6 +8,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Collider2D feetCollider;
     [SerializeField] private Collider2D bodyCollider;
     [SerializeField] private Animator playerAnim;
+    [SerializeField] private GameObject character;
+    [SerializeField] public float gapBetweenTimelines = 200f;
+
+    public int currentTimeline
+    {
+        get;private set;
+    }
 
 
     public Rigidbody2D rb { get; private set; }
@@ -14,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     //movement vars
     private Vector2 moveVelocity;
     private bool isFacingRight;
+    
+    private bool onMovingPlatform;
 
 
     //collision vars
@@ -46,8 +56,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        currentTimeline = 0;
         isFacingRight = true;
-
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -55,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
     {
         CountTimers();
         JumpChecks();
+        changeTimeLines();
     }
 
     private void FixedUpdate()
@@ -80,13 +91,13 @@ public class PlayerMovement : MonoBehaviour
         if (moveInput != Vector2.zero)
         {
             moveVelocity = Vector2.Lerp(moveVelocity,new Vector2(moveInput.x,0f)* MoveStats.maxWalkSpeed,acceleration*Time.fixedDeltaTime);
-            rb.linearVelocity = new Vector2(moveVelocity.x, rb.linearVelocity.y);
         }
         else
         {
-            moveVelocity = Vector2.Lerp(moveVelocity, Vector2.zero , deceleration * Time.fixedDeltaTime);
-            rb.linearVelocity = new Vector2(moveVelocity.x, rb.linearVelocity.y);
+            moveVelocity = Vector2.Lerp(moveVelocity, Vector2.zero, deceleration * Time.fixedDeltaTime);
+          
         }
+        rb.linearVelocity = new Vector2(moveVelocity.x, rb.linearVelocity.y);
 
     }
 
@@ -129,12 +140,14 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
         }
+
+        
     }
     
     private void CheckIfHeadHitCeli()
     {
         Vector2 boxCastOrigin = new Vector2(bodyCollider.bounds.center.x, bodyCollider.bounds.max.y);
-        Vector2 boxCastSize = new Vector2(bodyCollider.bounds.size.x, MoveStats.headDetectionRayLenght);
+        Vector2 boxCastSize = new Vector2(bodyCollider.bounds.size.x/2, MoveStats.headDetectionRayLenght);
 
         groundHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.up, MoveStats.headDetectionRayLenght, MoveStats.groundLayer);
         if(groundHit.collider)
@@ -315,6 +328,50 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             coyoteTimer = MoveStats.JumpCoyoteTime;
+        }
+    }
+
+    private void changeTimeLines()
+    {
+        if (InputMenager.timeChangeFutuPressed && currentTimeline != 1)
+        {
+            //animacja
+            int changeValue = 1 - currentTimeline;
+            changePosisionToCorrespondingTimeline(changeValue);
+            currentTimeline = 1;
+        }else if (InputMenager.timeChangePresPressed && currentTimeline != 0)
+        {
+            //animacja
+            int changeValue = -currentTimeline;
+            changePosisionToCorrespondingTimeline(changeValue);
+            currentTimeline = 0;
+        }else if (InputMenager.timeChangePastPressed && currentTimeline != -1)
+        {
+            //animacja
+            int changeValue = currentTimeline - 1;
+            changePosisionToCorrespondingTimeline(changeValue);
+            currentTimeline = -1;
+        }
+    }
+
+    public void changePosisionToCorrespondingTimeline(float change)
+    {
+        transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y + gapBetweenTimelines * change, transform.position.z),transform.rotation); 
+    }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Moving") && transform.parent != collision.transform)
+        {
+            transform.SetParent(collision.transform, true); // Attach to platform, preserving position
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Moving") && transform.parent != null)
+        {
+            transform.SetParent(null); // Detach from platform
         }
     }
 
