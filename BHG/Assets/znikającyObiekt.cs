@@ -16,7 +16,6 @@ public class DestroyAfterTime : MonoBehaviour
         if (!isCounting && targetObject != null)
         {
             isCounting = true; // Rozpoczęcie odliczania czasu
-            Debug.Log($"Platforma dotknięta przez: {collision.gameObject.name}. Zniknie za {delay} sekund.");
             StartCoroutine(DestroyObjectAfterDelay());
         }
     }
@@ -30,7 +29,7 @@ public class DestroyAfterTime : MonoBehaviour
         if (targetObject != null)
         {
             Destroy(targetObject); // Zniszczenie obiektu
-            Debug.Log($"Obiekt {targetObject.name} został zniszczony.");
+           
         }
     }
 }
