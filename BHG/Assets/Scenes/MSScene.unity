@@ -614,6 +614,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: deathtest
       objectReference: {fileID: 0}
+    - target: {fileID: 6575401464961038673, guid: d5b44d7d511ed4fb29c38642ebbfd3ed, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0883687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575401464961038673, guid: d5b44d7d511ed4fb29c38642ebbfd3ed, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.044184387
+      objectReference: {fileID: 0}
     - target: {fileID: 7859828590678162703, guid: d5b44d7d511ed4fb29c38642ebbfd3ed, type: 3}
       propertyPath: checkpointHandler
       value: 
@@ -752,7 +760,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 200322992}
         m_TargetAssemblyTypeName: PlayerRespawn, Assembly-CSharp
-        m_MethodName: respawnOnLastCheckpoint
+        m_MethodName: Respawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -766,6 +774,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5606523353397195630}
+        m_TargetAssemblyTypeName: ResetHandler, Assembly-CSharp
+        m_MethodName: resetAll
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1868,6 +1888,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c5fcb0c9cf3746f8ad74f66f99d61c5, type: 3}
+--- !u!114 &5606523353397195630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3685042245511992296, guid: 0c5fcb0c9cf3746f8ad74f66f99d61c5, type: 3}
+  m_PrefabInstance: {fileID: 5606523353397195629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b112fda8394d423d992e61e92ae1b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
