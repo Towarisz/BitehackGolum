@@ -614,6 +614,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: deathtest
       objectReference: {fileID: 0}
+    - target: {fileID: 6575401464961038673, guid: d5b44d7d511ed4fb29c38642ebbfd3ed, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0883687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575401464961038673, guid: d5b44d7d511ed4fb29c38642ebbfd3ed, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.044184387
+      objectReference: {fileID: 0}
     - target: {fileID: 7859828590678162703, guid: d5b44d7d511ed4fb29c38642ebbfd3ed, type: 3}
       propertyPath: checkpointHandler
       value: 
