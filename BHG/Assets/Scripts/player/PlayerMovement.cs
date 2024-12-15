@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void moveOnLadder(Vector2 moveInput)
     {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, moveInput.y * 1.5f);
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, moveInput.y * 2.5f);
     }
 
     private void TurnCheck(Vector2 moveInput)
