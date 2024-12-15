@@ -13,4 +13,9 @@ public class CollectablesHandlerScript : MonoBehaviour
     {
         collectablesCount++;
     }
+
+    public void setCollectablesCount(int Count)
+    {
+        collectablesCount = Count;
+    }
 }
