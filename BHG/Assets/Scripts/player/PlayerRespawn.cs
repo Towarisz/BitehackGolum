@@ -28,7 +28,7 @@ public class PlayerRespawn : MonoBehaviour
 
     void resetCollcetablesCount()
     {
-        collectablesHandler.setCollectablesCount(checkpointHandler.lastCollectablesCount);
+        //collectablesHandler.setCollectablesCount(checkpointHandler.lastCollectablesCount);
     }
    
 }
