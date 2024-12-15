@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class LadderScript : MonoBehaviour
 {
@@ -17,6 +19,15 @@ public class LadderScript : MonoBehaviour
             player.OnLadder = true;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player") && !player.OnLadder)
+        {
+            player.OnLadder = true;
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
