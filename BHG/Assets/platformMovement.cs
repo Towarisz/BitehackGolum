@@ -4,8 +4,8 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
     [Header("Movement Range")]
-    public Vector2 startPosition = new Vector2(0f, 0f);   // Pozycja startowa (x, y)
     public Vector2 endPosition = new Vector2(10f, 0f);     // Pozycja ko�cowa (x, y)
+    private Vector2 startPosition = new Vector2(10f, 0f);     // Pozycja ko�cowa (x, y)
     
     [Header("Settings")]
     public GameObject platformObject;                       // Obiekt platformy (mo�na przypisa� w inspektorze)
@@ -19,7 +19,8 @@ public class MovingPlatform : MonoBehaviour
     {
         if (platformObject != null)// Ustawienie pocz�tkowej pozycji platformy
         {
-            platformObject.transform.position = new Vector3(startPosition.x, startPosition.y, platformObject.transform.position.z);
+            startPosition = transform.position;
+            endPosition += startPosition;
         }
     }
 

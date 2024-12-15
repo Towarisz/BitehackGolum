@@ -355,6 +355,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    [SerializeField] private GameObject pastbg;
+    [SerializeField] private GameObject nowbg;
+    [SerializeField] private GameObject futurebg;
     private void changeTimeLines()
     {
         if (InputMenager.timeChangeFutuPressed && currentTimeline != 1)
@@ -363,18 +366,29 @@ public class PlayerMovement : MonoBehaviour
             int changeValue = 1 - currentTimeline;
             changePosisionToCorrespondingTimeline(changeValue);
             currentTimeline = 1;
+            futurebg.SetActive(true);
+            nowbg.SetActive(false);
+            pastbg.SetActive(false);
+
         }else if (InputMenager.timeChangePresPressed && currentTimeline != 0)
         {
             //animacja
             int changeValue = -currentTimeline;
             changePosisionToCorrespondingTimeline(changeValue);
             currentTimeline = 0;
-        }else if (InputMenager.timeChangePastPressed && currentTimeline != -1)
+            futurebg.SetActive(false);
+            nowbg.SetActive(true);
+            pastbg.SetActive(false);
+        }
+        else if (InputMenager.timeChangePastPressed && currentTimeline != -1)
         {
             //animacja
             int changeValue = -currentTimeline - 1;
             changePosisionToCorrespondingTimeline(changeValue);
             currentTimeline = -1;
+            futurebg.SetActive(false);
+            nowbg.SetActive(false);
+            pastbg.SetActive(true);
         }
     }
 

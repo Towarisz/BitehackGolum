@@ -11,6 +11,10 @@ public class ActivateMovement : MonoBehaviour
 
     private bool isActivated = false; // Flaga, czy obiekt zosta³ aktywowany
 
+    private void Awake()
+    {
+        targetPosition += transform.position;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         
