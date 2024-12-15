@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dcce852-feb2-4e82-8113-bd8379b5123f" name="Changes" comment="" />
+    <list default="true" id="7dcce852-feb2-4e82-8113-bd8379b5123f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BHG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BHG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/checkpoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/checkpoint.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/boss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/boss.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/player/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/player/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

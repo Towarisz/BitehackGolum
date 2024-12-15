@@ -31,5 +31,6 @@ public class CameraController : MonoBehaviour
         targetPoint.x= player.transform.position.x + lookOffset;
         
         transform.position = Vector3.Lerp(transform.position, targetPoint, Time.fixedDeltaTime * lookAheadSpeed);
+        
     }
 }
