@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator playerAnim;
     [SerializeField] private GameObject character;
     [SerializeField] public float gapBetweenTimelines = 200f;
-    public bool OnLadder = false;
-
+    [NonSerialized] public bool OnLadder = false;
+    
     public int currentTimeline
     {
         get;private set;

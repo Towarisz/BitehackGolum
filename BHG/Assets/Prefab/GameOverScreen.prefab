@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 747182880458446864}
   m_Layer: 0
   m_Name: GameOverScreen
-  m_TagString: Untagged
+  m_TagString: DeathScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

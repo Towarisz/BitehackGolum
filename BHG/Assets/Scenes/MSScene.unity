@@ -128,13 +128,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 132453887}
+  - component: {fileID: 132453888}
   m_Layer: 0
   m_Name: GameOverScreen
-  m_TagString: Untagged
+  m_TagString: DeathScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &132453887
 Transform:
   m_ObjectHideFlags: 0
@@ -152,6 +153,18 @@ Transform:
   - {fileID: 522500150}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &132453888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132453886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f7fe52da335459691668a79a2b96a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &180473263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -313,7 +326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff299a849a6284d08aa0296e2ff7f94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathScreen: {fileID: 132453886}
 --- !u!1 &336762800
 GameObject:
   m_ObjectHideFlags: 0

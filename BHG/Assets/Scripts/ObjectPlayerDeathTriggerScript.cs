@@ -3,7 +3,12 @@ using UnityEngine;
 
 public class ObjectPlayerDeathTriggerScript : MonoBehaviour
 {
-   [SerializeField] private GameObject deathScreen;
+    private GameObject deathScreen;
+
+   private void Awake()
+   {
+       deathScreen = GameObject.FindGameObjectWithTag("DeathScreen");
+   }
 
    private void OnTriggerEnter2D(Collider2D other)
    {
