@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator playerAnim;
     [SerializeField] private GameObject character;
     [SerializeField] public float gapBetweenTimelines = 200f;
-
+    [NonSerialized] public bool OnLadder = false;
+    
     public int currentTimeline
     {
         get;private set;
@@ -91,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
         if (moveInput != Vector2.zero)
         {
             moveVelocity = Vector2.Lerp(moveVelocity,new Vector2(moveInput.x,0f)* MoveStats.maxWalkSpeed,acceleration*Time.fixedDeltaTime);
+            if(OnLadder) moveOnLadder(moveInput);
         }
         else
         {
@@ -99,6 +102,11 @@ public class PlayerMovement : MonoBehaviour
         }
         rb.linearVelocity = new Vector2(moveVelocity.x, rb.linearVelocity.y);
 
+    }
+
+    private void moveOnLadder(Vector2 moveInput)
+    {
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, moveInput.y * 1.5f);
     }
 
     private void TurnCheck(Vector2 moveInput)
@@ -168,80 +176,96 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (isJumping)
+        if (OnLadder)
         {
-            if (bumpedHead)
-            {
-                isFastFalling = true;
-            }
-        }
-
-        if(VerticalVelocity >= 0f)
-        {
-            apexPoint = Mathf.InverseLerp(MoveStats.InitialJumpVelocity, 0f, VerticalVelocity);
-            if(apexPoint > MoveStats.ApexThreshold)
-            {
-                if(!isPastApexThreshold)
-                {
-                    isPastApexThreshold = true;
-                    timePastApexThreshold = 0f;
-                }
-                if (isPastApexThreshold)
-                {
-                    timePastApexThreshold += Time.fixedDeltaTime;
-                    if(timePastApexThreshold < MoveStats.ApexHangTime)
-                    {
-                        VerticalVelocity = 0f;
-                    }
-                    else
-                    {
-                        VerticalVelocity = -0.01f;
-                    }
-                }
-            }
-            else
-            {
-                VerticalVelocity += MoveStats.Gravity * Time.fixedDeltaTime;
-                if (isPastApexThreshold)
-                {
-                    isPastApexThreshold = false;
-                }
-            }
-        }
-        else if (!isFastFalling)
-        {
-            VerticalVelocity += MoveStats.Gravity * MoveStats.GravityOnReleaseMultiplier * Time.fixedDeltaTime;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         }
         else
         {
-            if(!isFalling)
+
+            if (isJumping)
             {
-                isFalling = true;
+                if (bumpedHead)
+                {
+                    isFastFalling = true;
+                }
             }
-        }
-        
-        if (isFastFalling)
-        {
-            if(fastFallTime >= MoveStats.TimeForUpwardsCancel)
+
+            if (VerticalVelocity >= 0f)
+            {
+                apexPoint = Mathf.InverseLerp(MoveStats.InitialJumpVelocity, 0f, VerticalVelocity);
+                if (apexPoint > MoveStats.ApexThreshold)
+                {
+                    if (!isPastApexThreshold)
+                    {
+                        isPastApexThreshold = true;
+                        timePastApexThreshold = 0f;
+                    }
+
+                    if (isPastApexThreshold)
+                    {
+                        timePastApexThreshold += Time.fixedDeltaTime;
+                        if (timePastApexThreshold < MoveStats.ApexHangTime)
+                        {
+                            VerticalVelocity = 0f;
+                        }
+                        else
+                        {
+                            VerticalVelocity = -0.01f;
+                        }
+                    }
+                }
+                else
+                {
+                    VerticalVelocity += MoveStats.Gravity * Time.fixedDeltaTime;
+                    if (isPastApexThreshold)
+                    {
+                        isPastApexThreshold = false;
+                    }
+                }
+            }
+            else if (!isFastFalling)
             {
                 VerticalVelocity += MoveStats.Gravity * MoveStats.GravityOnReleaseMultiplier * Time.fixedDeltaTime;
-            }else if (fastFallTime < MoveStats.TimeForUpwardsCancel)
-            {
-                VerticalVelocity = Mathf.Lerp(fastFallReleaseSpeed, 0f, (fastFallTime / MoveStats.TimeForUpwardsCancel));
             }
-            fastFallTime += Time.fixedDeltaTime;
-        }
-        if(!isGrounded && !isJumping)
-        {
-            if (!isFalling)
+            else
             {
-                isFalling = true;
+                if (!isFalling)
+                {
+                    isFalling = true;
+                }
             }
-            VerticalVelocity += MoveStats.Gravity * Time.fixedDeltaTime;
 
+            if (isFastFalling)
+            {
+                if (fastFallTime >= MoveStats.TimeForUpwardsCancel)
+                {
+                    VerticalVelocity += MoveStats.Gravity * MoveStats.GravityOnReleaseMultiplier * Time.fixedDeltaTime;
+                }
+                else if (fastFallTime < MoveStats.TimeForUpwardsCancel)
+                {
+                    VerticalVelocity = Mathf.Lerp(fastFallReleaseSpeed, 0f,
+                        (fastFallTime / MoveStats.TimeForUpwardsCancel));
+                }
+
+                fastFallTime += Time.fixedDeltaTime;
+            }
+
+            if (!isGrounded && !isJumping)
+            {
+                if (!isFalling)
+                {
+                    isFalling = true;
+                }
+
+                VerticalVelocity += MoveStats.Gravity * Time.fixedDeltaTime;
+
+            }
+
+            VerticalVelocity = Mathf.Clamp(VerticalVelocity, -MoveStats.MaxFallSpeed, 50f);
+            
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, VerticalVelocity);
         }
-        VerticalVelocity = Mathf.Clamp(VerticalVelocity, -MoveStats.MaxFallSpeed, 50f);
-        rb.linearVelocity = new Vector2 (rb.linearVelocity.x, VerticalVelocity);
     }
 
     private void JumpChecks()
@@ -292,7 +316,7 @@ public class PlayerMovement : MonoBehaviour
             isFastFalling = false;
         }
 
-        if((isJumping || isFalling) && isGrounded && VerticalVelocity <= 0f)
+        if ((isJumping || isFalling) && isGrounded && VerticalVelocity <= 0f)
         {
             isJumping = false;
             isFalling = false;
@@ -348,7 +372,7 @@ public class PlayerMovement : MonoBehaviour
         }else if (InputMenager.timeChangePastPressed && currentTimeline != -1)
         {
             //animacja
-            int changeValue = currentTimeline - 1;
+            int changeValue = -currentTimeline - 1;
             changePosisionToCorrespondingTimeline(changeValue);
             currentTimeline = -1;
         }
